@@ -7,8 +7,8 @@ local io = require("io")
 local accounts = {}
 
 --opens the json file and formats it to a lua table (thanks rxi), then places it into jsonStorage
-jsonStorage = io.open("accounts.json", "r")
-accounts = json.decode(jsonStorage:read("*all"))
+local jsonStorage = io.open("accounts.json", "r")
+local accounts = json.decode(jsonStorage:read("*all"))
 jsonStorage:close()
 
 print(accounts)
