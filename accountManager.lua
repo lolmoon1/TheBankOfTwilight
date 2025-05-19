@@ -3,10 +3,11 @@
 
 local json = require("lib/json")
 
-local accounts = {}
+-- opens the json file and formats it to a lua table (thanks rxi), then places it into jsonStorage
+local jsonStorage = fs.open("./TheBankOfTwilight/accounts.json", "r")
+local accounts = json.decode(jsonStorage.readAll())
+jsonStorage.close()
 
---opens the json file and formats it to a lua table (thanks rxi), then places it into jsonStorage
-local jsonStorage = fs.open("accounts.json", "r")
-accounts = json.decode(jsonStorage.readAll())
-
-print(accounts)
+for k, v in pairs(accounts.Accounts) do
+    print(k, v)
+end
