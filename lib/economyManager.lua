@@ -1,0 +1,1 @@
+-- TODO: make fluxuating economy thats affected by how much ores are stored, think like inflation
